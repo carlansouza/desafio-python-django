@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'projeto/partials/head.html' %}
+        <title>{% block title %}Cadastar Vaga | {% endblock title %} JobsDevs</title>
+    </head>
+<body>
+
+    {% if request.user.is_authenticated %}
+    {% include 'projeto/partials/header.html' %}
+    <section class="main-cadastrar m-5">
+        <div class="container">
+            <div class="row mb-3 text-center">
+                <div class="col-12">
+                    <span style="font-size: 50px;">Cadastrar Vagas</span>
+                </div>
+            </div>
+            <div class="row">
+          
+            <div class="text-center">
+                <button type="button" class="btn btn-success m-2 w-20 ">
+                  Enviar 
+                </button>
+            </div>
+        </div>
+       
+    </section>
+    {% else %}
+        <div class="alert alert-danger text-center mt-5">
+            <h4>Você precisa estar logado para acessar essa página</h4>
+            <a href="{% url 'home' %}" class="btn btn-primary">Login</a>
+        </div>
+    {% endif %}
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'projeto/partials/head.html' %}
+        <title>{% block title %}HOME | {% endblock title %} JobsDevs</title>
+    </head>
+<body>
+
+    {% if request.user.is_authenticated %}
+    {% include 'projeto/partials/header.html' %}
+    <section class="p-5">
+        <div class="title text-center">
+            <h1>JobsDevs - Vagas</h1>
+            <p>Encontre aqui as melhores vagas de programação</p>
+        </div>
+        <div class="search-container text-center mt-5">
+            <div class="container">
+                <form class="search-form d-flex justify-content-between"  action="">
+                    <input type="search" class="search-input" placeholder="Pesquisar vaga..." name="search"
+                    >
+                    <button type="submit" class="search-button"><i class=" fa fa-search"></i></button>
+                </form>
+            </div>
+        </div> 
+        <!--- exibir vagas -->
+        <div>
+            <div class="container mt-3 w-50">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Titulo da vaga: </h5>
+                                    <p class="card-text">Requisitos: </p>
+                                    <p class="card-text">Faixa Salarial: </p>
+                                    <p class="card-text">Escolaridade: </p>
+                                    <a href="#" class="btn btn-primary 
+                                    align-self-center">Candidatar-se</a>
+                                </div>
+                                <!--exibir total de candidatos-->
+                                <div class="card-footer text-muted">
+                                    <small>Total de candidatos: </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {% else %}
+        <div class="alert alert-danger text-center mt-5">
+            <h4>Você precisa estar logado para acessar essa página</h4>
+            <a href="{% url 'home' %}" class="btn btn-primary">Login</a>
+        </div>
+    {% endif %}  
+</body>
+

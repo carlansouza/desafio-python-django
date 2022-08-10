@@ -1,0 +1,41 @@
+
+
+
+
+/*CLASS proprias*/
+.main-home{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.search-input,
+.search-button {
+	border: none;
+	background: none;
+	outline: none;
+	padding: 5px;
+}
+
+.search-form{
+	border: 2px solid #ccc;
+	border-radius: 3px;
+	max-width: 44vw;
+	margin: 0 auto;
+}
+
+.search-input{
+	width: 100%;
+}
+
+.search-button:focus {
+	outline: 2px solid #000;
+	background: rgba(0, 0, 0, 0.1);
+}
+.search-form:focus-within{
+	border: 2px solid tomato;
+	background-color: white;
+}
+
+	
+

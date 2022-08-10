@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'projeto/partials/head.html' %}
+        <title>{% block title %}Cadastrar | {% endblock title %} JobsDevs</title>
+    </head>
+<body>
+
+    <div class="container p-5">
+        <div>
+            <h1 class="text-center">Cadastrar Usuário</h1>
+        </div>
+        <div class="mt-5 d-flex justify-content-center">
+            <form class=" d-flex 
+                          flex-column 
+                          w-50"
+                          method="post">
+
+                {% csrf_token %}
+            
+                <div class="form-group mb-3 ">
+                    {{form_usuario.username.errors}}
+                    <label>Username: </label>
+                    {{form_usuario.username}}
+                </div>
+            
+                <div class=" form-group mb-3">
+                    {{form_usuario.password1.errors}}
+                    <label>Senha: </label>
+                    {{form_usuario.password1}}
+                </div>
+            
+                <div class=" form-group mb-3">
+                    {{form_usuario.password2.errors}}
+                    <label>Confirmação de senha: </label>
+                    {{form_usuario.password2}}
+                </div>
+            
+                <div class="form-group text-center ">
+                    <input type="submit" value="Cadastrar" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'projeto/partials/head.html' %}
+        <title>{% block title %}HOME | {% endblock title %} JobsDevs</title>
+    </head>
+<body>
+
+    {% if request.user.is_authenticated %}
+    {% include 'projeto/partials/header.html' %}
+    <section class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Bem vindo {{ request.user.first_name }}</h1>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-danger text-center mt-5">
+            <h4>Você precisa estar logado para acessar essa página</h4>
+            <a href="{% url 'home' %}" class="btn btn-primary">Login</a>
+        </div>
+    {% endif %}  
+</body>
+

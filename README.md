@@ -1,6 +1,6 @@
 # TESTE PRATICO DE APLICAÇÃO WEB DJANGO/PYTHON
 <pre>
-<h4>Proposta de desenvolvimento de um aplicativo web para o Django Framework e Python no Backend.<h4>
+<h4>Proposta de desenvolvimento de um aplicativo web com o Django Framework e Python no Backend.<h4>
 <h3>    Ferramentas utilizadas</h3>
         Python 3.9.13
         Django 4.1
